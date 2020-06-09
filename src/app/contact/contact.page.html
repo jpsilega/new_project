@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contact</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+     <ion-list-header> <br> <h4>Contáctenos a:</h4></ion-list-header>
+        <ion-item *ngFor="let item of contact">
+         <p>Correo: {{ item.email }}
+       <br> <br> Telefono: {{ item.phoneNumbers }}</p> 
+       </ion-item>
+     </ion-list>
+  </ion-content>

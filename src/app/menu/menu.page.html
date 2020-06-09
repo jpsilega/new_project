@@ -1,0 +1,42 @@
+<ion-app>
+  <ion-menu  contentId="main-content" side="start">
+    <ion-header id="image">
+      <ion-toolbar >
+        <ion-title class="userfondo" >
+          Usuario
+        </ion-title>
+      </ion-toolbar>      
+
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">           
+            <ion-avatar >
+              <img (click)="Editar()" [src]="src">
+            </ion-avatar>           
+          </ion-thumbnail>
+          <ion-label>{{currents}} <h6>{{puntage}} <ion-icon name="star-outline"></ion-icon></h6> </ion-label> 
+                 
+        </ion-item>
+      </ion-list>
+      
+    </ion-header>
+    <ion-content>
+      <ion-list>        
+          <ion-menu-toggle auto-hide="false"  *ngFor="let page of pages">
+            <ion-item [routerLink]="page.path" routerDirection="root" [class.active-menu]="activePath === page.path">
+              {{page.name}}
+            </ion-item>
+          </ion-menu-toggle>      
+      </ion-list>
+       <br>
+      <button ion-item  (click)="authService.SignOut()">
+        <ion-icon item-left color="primary" name="log-out"></ion-icon>
+           Salir
+      </button>
+    </ion-content>
+
+   
+  </ion-menu>
+  <ion-router-outlet id="main-content" main></ion-router-outlet>
+  
+</ion-app>

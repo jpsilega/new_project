@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mysiteweb-62610": {
+      "hosting": {
+        "app": [
+          "mysiteweb-62610"
+        ]
+      }
+    }
+  }
+}

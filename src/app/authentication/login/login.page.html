@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>    
+    <ion-title>Sign in User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  class="buttonCenter">    
+    <ion-item >
+      <ion-label position="floating" >Email</ion-label>
+      <ion-input type="text" #email required></ion-input>
+    </ion-item> 
+
+    <ion-item >
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" #password required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col> 
+      <ion-button color="success" type="submit" (click)="logIn(email, password)" expand="default">Iniciar Sesion</ion-button>
+      </ion-col>
+    </ion-row>
+     <br>
+    <span class="divider">o</span>
+    <span class="not_already">No existe el usuario?</span>
+    <ion-row>
+      <ion-col> 
+      <ion-button type="submit" [routerLink]="['/register']" expand="default">Registrarse</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col> 
+        <ion-button 
+         type="submit" 
+         color="danger"
+         (click)="authService.GoogleAuth()" 
+         expand="default">
+           Entrar con Google
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>
